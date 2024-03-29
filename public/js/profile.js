@@ -7,7 +7,7 @@ const newFormHandler = async (event) => {
   const picture = document.querySelector('#imageFile');
 
   if (name && location && description && picture) {
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({ name, location, description, picture }),
       headers: {
