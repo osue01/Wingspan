@@ -23,9 +23,13 @@ Post.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    imague_url: {
+    image_url: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
