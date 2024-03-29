@@ -3,13 +3,15 @@ const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 const parser = require('../../utils/cloudinary');
 
-router.post('/', withAuth, parser.single(), async (req, res) => {
+router.post('/', withAuth, parser.single('picture'), async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
       user_id: req.session.user_id,
+      image_url: req.file.path,
     });
-
+    console.log(req.body);
+    console.log(req.file);
     res.status(200).json(newPost);
   } catch (err) {
     res.status(400).json(err);
