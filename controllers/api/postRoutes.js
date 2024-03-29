@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
+const parser = require('../../utils/cloudinary');
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', withAuth, parser.single(), async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
