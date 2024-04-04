@@ -16,11 +16,11 @@
 <div class="row">
   <div class="col-md-4">
     <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap" />
+      <img class="card-img-top" src="{{post.image_url}}" alt="Card image cap" />
       <div class="card-body">
-        <h5 class="card-title">{{bird_name}}</h5>
-        <p class="card-text">{{description}}</p>
-         <p class="card-text"><small class="text-muted">Seen by {{user.name}} on {{format_date date_created}} in 📍{{location}}</small></p>
+        <h5 class="card-title">{{post.name}}</h5>
+        <p class="card-text">{{post.description}}</p>
+         <p class="card-text"><small class="text-muted">Seen by {{user.name}} on {{format_date date_created}} in 📍{{post.location}}</small></p>
          <a href="/posts/{{post.id}}">{{post.name}} class="btn btn-primary" > View post </a>
          
       </div>
