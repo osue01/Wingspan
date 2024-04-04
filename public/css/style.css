@@ -40,3 +40,10 @@ header, .project:not(:last-child) {
 .signup{
   
 }
+
+#header{
+  text-align: center;
+  color: #537b2f;
+  font-weight: bold;
+  
+}
