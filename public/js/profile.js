@@ -5,14 +5,16 @@ const newFormHandler = async (event) => {
   const location = document.querySelector('#bird-location').value.trim();
   const description = document.querySelector('#bird-desc').value.trim();
   const picture = document.querySelector('#imageFile');
+  const formData = new FormData();
+  formData.append("name", name);
+  formData.append("location", location);
+  formData.append("description", description);
+  formData.append("picture", picture.files[0]);
 
-  if (name && location && description && picture) {
+  // if (name && location && description && picture) {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
-      body: JSON.stringify({ name, location, description, picture }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      body: formData,
     });
 
     if (response.ok) {
@@ -20,14 +22,14 @@ const newFormHandler = async (event) => {
     } else {
       alert('Failed to create post');
     }
-  }
+  // }
 };
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/post/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
       method: 'DELETE',
     });
 

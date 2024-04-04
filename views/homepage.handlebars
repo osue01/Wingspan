@@ -1,24 +1,38 @@
-<!-- Loop over each object in the projects array -->
-{{#each post as |post| }}
-<div class="row mb-4 post">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/post/{{post.id}}">{{post.user}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="bird">🐦</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Spotted by {{post.user.name}} on {{format_date post.date_created}}</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wingspan</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta charset="utf-8">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+{{#if posts.length}}
+  <div class="col-md-12">
+    <h3>Current Posts:</h3>
+  <!-- Loop over each object in the projects array -->
+    {{#each Posts as |post| }}
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img-top" src="..." alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">{{post.name}}</h5>
+            <p class="card-text">{{post.description}}</p>
+            <p class="card-text"><small class="text-muted">Seen by {{post.user.name}} on {{post.format_date post.date_created}} in 📍{{post.location}}</small></p>
+            <a href="/posts/{{post.id}}">{{post.name}} class="btn btn-primary" > View post </a>
+            
+          </div>
+        </div>
+      </div>
+    {{/each}}
+    </div>
+  {{/if}}
   </div>
-  <div class="col-md-7">
-    <p>
-      {{post.description}}
-    </p>
-  </div>
-</div>
-{{/each}}
+
+
+
