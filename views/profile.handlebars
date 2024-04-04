@@ -39,6 +39,9 @@
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/posts/{{post.id}}">{{post.name}}</a></h4>
+        <h5>{{post.description}}</h5>
+        <h5>{{post.location}}</h5>
+        <img src="{{post.image_url}}" height="175px">
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
