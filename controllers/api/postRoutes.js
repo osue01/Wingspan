@@ -3,7 +3,7 @@ const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 const parser = require('../../utils/cloudinary');
 
-router.post('/:id', withAuth, parser.single('picture'), async (req, res) => {
+router.post('/', withAuth, parser.single('picture'), async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
