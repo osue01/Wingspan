@@ -11,23 +11,18 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
-{{#if posts.length}}
-  <div class="col-md-12">
-    <h3>Current Posts:</h3>
-  <!-- Loop over each object in the projects array -->
-    {{#each Posts as |post| }}
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap" />
-          <div class="card-body">
-            <h5 class="card-title">{{post.name}}</h5>
-            <p class="card-text">{{post.description}}</p>
-            <p class="card-text"><small class="text-muted">Seen by {{post.user.name}} on {{post.format_date post.date_created}} in 📍{{post.location}}</small></p>
-            <a href="/posts/{{post.id}}">{{post.name}} class="btn btn-primary" > View post </a>
-            
-          </div>
-        </div>
+
+<!-- Loop over each object in the projects array -->
+{{#each posts as |post| }}
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <img class="card-img-top" src="{{post.image_url}}" alt="Card image cap" />
+      <div class="card-body">
+        <h5 class="card-title">{{post.name}}</h5>
+        <p class="card-text">{{post.description}}</p>
+         <p class="card-text"><small class="text-muted">Seen by {{user.name}} on {{format_date date_created}} in 📍{{post.location}}</small></p>
+         <a href="/posts/{{post.id}}">{{post.name}} class="btn btn-primary" > View post </a>
       </div>
     {{/each}}
     </div>
