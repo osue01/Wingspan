@@ -39,6 +39,10 @@ Post.init(
         key: 'id',
       },
     },
+    comment: {
+      type: DataTypes.JSON, 
+      defaultValue: [], 
+    }, 
   },
   {
     sequelize,
