@@ -17,14 +17,14 @@
 <h1 id="header">Birds Spotted</h1>
 
 <div class="row">
-{{#each posts as |post| }}
+{{#each posts as |post|}}
   <div class="col-md-4 col-sm-12">
-    <div class="card">
-      <img class="card-img-top" src="{{post.image_url}}" alt="Card image cap" />
+    <div class="card" id="card-size">
+      <img class="card-img-top" id="image-size" src="{{post.image_url}}" alt="Card image cap" />
       <div class="card-body">
         <h5 class="card-title"><a id="card-link" href="/posts/{{post.id}}">{{post.name}}</a></h5>
-        <p class="card-text">{{post.description}}</p>
 
+        <p class="card-text" id="text-cutoff">{{post.description}}</p>
          <!-- <a href="/posts/{{post.id}}" > View full post </a>  -->
       </div>
       <div class="card-location border">
