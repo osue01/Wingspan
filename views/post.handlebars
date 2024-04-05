@@ -20,13 +20,11 @@
   </div>
 </div>
 
-<Post>
-    <form method="POST" action="/comment">
+    <form id="commentForm">
         <div class="input-field">
             <label>Comment:</label>
-            <textarea type="text" name="comment" rows="20" placeholder="Comment on this sighting"></textarea>
+            <textarea type="text" id="comment-text" name="comment" rows="20" placeholder="Comment on this sighting"></textarea>
         </div>
-        <input type="hidden" name="article-id" value="{{article.id}}">
+        <input type="hidden" name="id" value="{{id}}">
         <button type="submit">Add Comment</button>
     </form>
-</Post>

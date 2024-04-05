@@ -1,3 +1,7 @@
+const commentFormEl = document.querySelector("#commentForm")
+const commentFormHandler = async (event) => {
+event.preventDefault();
+
 const comment = document.querySelector('#comment-text').value;
  // Make a POST request to the backend to submit the comment
  const response = await fetch('/api/post/:id/comments', {
@@ -5,7 +9,7 @@ const comment = document.querySelector('#comment-text').value;
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ text: commentText }),
+    body: JSON.stringify({ text: comment }),
   });
 
   if (response.ok) {
@@ -15,3 +19,5 @@ const comment = document.querySelector('#comment-text').value;
     // Handle error in comment submission
     console.error('Failed to submit comment');
   }
+}
+commentFormEl.addEventListener("submit", commentFormHandler)
