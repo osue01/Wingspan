@@ -7,7 +7,9 @@ Through the birdfeed, birders can see other posts and comment.
 
 We used a combination of Multer and Cloudinary to store images in our database. 
 
-Since our project was scaled appropriately, we didn't struggle too much with getting to MVP. We do have high hopes for future implementation. We hope to add a bird bucket list to allow users to note the birds they hope to see one day, use user location instead of self-reporting, display bird facts with use of API.
+A challenge we have faced is getting comments to display on each post. We have the front end set up, but getting the comments routed to the backend and displaying on each post has been a challenge.
+
+ We do have high hopes for future implementation. We hope to add a bird bucket list to allow users to note the birds they hope to see one day, use user location instead of self-reporting, display bird facts with use of API.
 
 Credits:
 Team members - Daniel Laguarta, Aileen Nguyen, Olivia Sue
