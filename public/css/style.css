@@ -47,3 +47,33 @@ header, .project:not(:last-child) {
   font-weight: bold;
   
 }
+
+#card-size{
+  overflow: hidden;
+  max-height: 385px;
+  min-height: 385px;
+  
+}
+
+#image-size{
+  max-height: 200px;
+  min-height: 200px;
+    width: 100%;
+    object-fit:cover;
+  
+}
+
+#profile-card-size{
+  overflow: hidden;
+  max-height: 410px;
+  min-height: 410px;
+  
+}
+
+#profile-image-size{
+  max-height: 150px;
+  min-height: 150px;
+    width: 100%;
+    object-fit:cover;
+  
+}
