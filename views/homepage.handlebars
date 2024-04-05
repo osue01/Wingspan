@@ -22,12 +22,13 @@
         <h5 class="card-title">{{post.name}}</h5>
         <p class="card-text">{{post.description}}</p>
          <p class="card-text"><small class="text-muted">Seen by {{user.name}} on {{format_date date_created}} in 📍{{post.location}}</small></p>
-         <a href="/posts/{{post.id}}">{{post.name}} class="btn btn-primary" > View post </a>
+         <a href="/posts/{{post.id}}" class="btn btn-primary" >{{post.name}} View post </a>
       </div>
-    {{/each}}
     </div>
-  {{/if}}
   </div>
+</div>
+{{/each}}
+
 
 
 

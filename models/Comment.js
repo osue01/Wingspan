@@ -12,25 +12,9 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
+    comment_text: {
+      type: DataTypes.TEXT,
       allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
-    },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-    image_url: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    location: {
-      type: DataTypes.STRING,
-      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -39,13 +23,20 @@ Post.init(
         key: 'id',
       },
     },
+    post_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'post',
+          key: 'id',
+        },
+      },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Post',
+    modelName: 'Comment',
   }
 );
 
